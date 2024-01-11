@@ -497,10 +497,6 @@ export default defineComponent({
                const speed = progressEvent.loaded / elapsed; // 每秒下载字节数
                const remaining = progressEvent.total - progressEvent.loaded; // 剩余字节数
                const remainingTime = (remaining / speed).toFixed(2); // 剩余时间（秒）
-               if(remainingTime < 1){
-                       remainingTime = 0;
-                       speed = 0;
-               }
                durationRef.value = remainingTime;
                speedRef.value = (speed / 1024).toFixed(1);
                console.log(`剩余时间: ${remainingTime}秒`);
